@@ -3,8 +3,6 @@
 import StackFSM as FSM
 import time
 
-
-
 class Ant(object):
 
   brain = None
