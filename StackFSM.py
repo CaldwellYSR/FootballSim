@@ -22,5 +22,3 @@ class StackFSM(object):
 
   def getCurrentState(self):
     return self.stack[len(self.stack) - 1] if len(self.stack) > 0 else None
-
-//This be poopoo
