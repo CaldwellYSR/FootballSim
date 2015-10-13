@@ -1,0 +1,59 @@
+  + Decision Tree +
+
+* Each outcome becomes X or !X instead of X or Y or Z.
+  - ex:  Made Tackle or Missed Tackle then move on to next deciion
+  - not: Made Tackle + Fumble or Made Tackle + Injury or Made Tackle or Missed Tackle or Juke...
+* Use Odds Ratio
+  - see: http://www.insidethebook.com/ee/index.php/site/comments/the_odds_ratio_method/
+  - Odd Team A + Odd Team B / Odd League
+
+  + Finite State Machine
+
+* 
+
+  + Football Variables
+
+* Score
+* Quarter
+* Time
+* Down & Distance
+* Possession
+
+  + Game States and Outcomes
+
+* Kickoff
+  - Onside Kick
+    ~ Return Team Recovers
+    ~ Kicking Team Recovers
+    ~ < 10yds penalty
+    ~ Onside Kick Out Of Bounds Penalty
+  - Out Of Bounds Penalty
+  - Touchback Out Of Endzone
+  - Kick Into Endzone
+    ~ Returner Takes Touchback
+    ~ Returner Runs Ball
+  - Kick Short
+    ~ Returner Runs Ball
+
+* Teams in Formation
+  - Penalty
+* Ball Snapped
+  - Penalty (ex: too many men on field, illegal formation)
+  - Fumble
+  - Quarterback Gets Ball
+* Quaterback Has Ball
+  - Pass
+  - Run
+* Passed Ball
+  - Catch
+  - Drop
+  - Interception
+  - Tipped 
+* Player Running With Ball
+  - Tackle
+  - Missed Tackle
+* Play Dead 
+  - Advance Time
+  - Advance Down
+  - Advance Score
+  - Move Back to Teams in Formation
