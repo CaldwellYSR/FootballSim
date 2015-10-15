@@ -44,6 +44,10 @@ class Game(object):
     elif self.time >= 1800:
         print("That's the end of the 2nd quarter")
         print("Home Score: {:d} Away Score: {:d}".format( self.h_score, self.a_score ))
+        self.home_possession = False
+        self.yardline = 20
+        self.down = 1
+        self.distance = 10
         self.quarter = 3
     elif self.time >= 900:
         print("That's the end of the 1st quarter")
