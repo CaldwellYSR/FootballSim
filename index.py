@@ -201,20 +201,10 @@ class Game(object):
       print("Home Score: {:d} Away Score: {:d}".format( self.h_score, self.a_score ))
       exit()
 
-  def update(self, dt):
+  def update(self):
     self.fsm.update()
 
 if __name__ == "__main__":
   game = Game()
-  lastFrameTime = 0
-  FPS = 600
   while True:
-    currentTime = time.time()
-    dt = currentTime - lastFrameTime
-    lastFrameTime = currentTime
-
-    sleepTime = 1./FPS - (currentTime - lastFrameTime)
-    if sleepTime > 0:
-      time.sleep(sleepTime)
-
-    game.update(dt)
+    game.update()
