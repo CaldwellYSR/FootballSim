@@ -40,20 +40,38 @@
 * Ball Snapped
   - Penalty (ex: too many men on field, illegal formation)
   - Fumble
-  - Quarterback Gets Ball
+  - Check for 4th down
+    # Quaterback Has Ball
+    # Punt/Field Goal
 * Quaterback Has Ball
+  - Fumble
+  - Sack
   - Pass
   - Run
-* Passed Ball
-  - Catch
-  - Drop
+* Pass Play
+  - Sack
+  - Throw away
   - Interception
   - Tipped 
+  - Drop
+  - Catch
 * Player Running With Ball
+  - Fumble
   - Tackle
   - Missed Tackle
+* Punt
+  - Blocked
+  - Fumble
+  - Successful
+* Field Goal
+  - Short/Returnable
+  - Blocked
+  - Fumble
+  - Miss
+  - Make
 * Play Dead 
   - Advance Time
   - Advance Down
   - Advance Score
-  - Move Back to Teams in Formation
+  - Advnace Distance
+  - Move Back to Teams in Formation (Describe Play)

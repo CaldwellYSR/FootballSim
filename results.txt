@@ -1,0 +1,588 @@
+Home Score: 0 Away Score: 0
+Down: 1 Distance: 10 Yardline: < 20
+The quarterback drops back to pass
+The pass sails just a bit long
+Down: 2 Distance: 10 Yardline: < 20
+The quarterback drops back to pass
+The pass sails just a bit long
+Down: 3 Distance: 10 Yardline: < 20
+The quarterback drops back to pass
+What a catch by the wide receiver! That's a gain of 10 yards
+First Down!
+Down: 1 Distance: 10 Yardline: < 30
+The quarterback drops back to pass
+The pass sails just a bit long
+Down: 2 Distance: 10 Yardline: < 30
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+Down: 3 Distance: 6 Yardline: < 34
+The quarterback drops back to pass
+What a catch by the wide receiver! That's a gain of 10 yards
+First Down!
+Down: 1 Distance: 10 Yardline: < 44
+The quarterback drops back to pass
+What a catch by the wide receiver! That's a gain of 10 yards
+First Down!
+Down: 1 Distance: 10 Yardline: 46 >
+The quarterback drops back to pass
+The pass sails just a bit long
+Down: 2 Distance: 10 Yardline: 46 >
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+Down: 3 Distance: 6 Yardline: 42 >
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+Down: 4 Distance: 2 Yardline: 38 >
+45 Yard Field Goal!
+It's good!
+Home Score: 3 Away Score: 0
+Down: 1 Distance: 10 Yardline: < 20
+The quarterback drops back to pass
+What a catch by the wide receiver! That's a gain of 10 yards
+First Down!
+Down: 1 Distance: 10 Yardline: < 30
+The quarterback drops back to pass
+The quarterback was sacked!
+Down: 2 Distance: 16 Yardline: < 24
+The quarterback drops back to pass
+What a catch by the wide receiver! That's a gain of 10 yards
+Down: 3 Distance: 6 Yardline: < 34
+The quarterback drops back to pass
+The pass sails just a bit long
+Down: 4 Distance: 6 Yardline: < 34
+Punt!
+The home team takes over at the 26 yard line.
+Down: 1 Distance: 10 Yardline: < 26
+The quarterback drops back to pass
+What a catch by the wide receiver! That's a gain of 10 yards
+First Down!
+Down: 1 Distance: 10 Yardline: < 36
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+Down: 2 Distance: 6 Yardline: < 40
+The quarterback drops back to pass
+What a catch by the wide receiver! That's a gain of 10 yards
+First Down!
+Down: 1 Distance: 10 Yardline: 50 >
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+Down: 2 Distance: 6 Yardline: 46 >
+The quarterback drops back to pass
+What a catch by the wide receiver! That's a gain of 10 yards
+First Down!
+Down: 1 Distance: 10 Yardline: 36 >
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+Down: 2 Distance: 6 Yardline: 32 >
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+Down: 3 Distance: 2 Yardline: 28 >
+The quarterback drops back to pass
+What a catch by the wide receiver! That's a gain of 10 yards
+First Down!
+Down: 1 Distance: 10 Yardline: 18 >
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+Down: 2 Distance: 6 Yardline: 14 >
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+Down: 3 Distance: 2 Yardline: 10 >
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+First Down!
+Down: 1 Distance: 10 Yardline: 6 >
+The quarterback drops back to pass
+What a catch by the wide receiver! That's a gain of 10 yards
+Touchdown!
+Home Score: 10 Away Score: 0
+Down: 1 Distance: 10 Yardline: < 20
+The quarterback drops back to pass
+The pass sails just a bit long
+Down: 2 Distance: 10 Yardline: < 20
+The quarterback drops back to pass
+The pass sails just a bit long
+That's the end of the 1st quarter
+Home Score: 10 Away Score: 0
+Down: 3 Distance: 10 Yardline: < 20
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+That's the end of the 1st quarter
+Home Score: 10 Away Score: 0
+Down: 4 Distance: 6 Yardline: < 24
+Punt!
+The home team takes over at the 36 yard line.
+That's the end of the 1st quarter
+Home Score: 10 Away Score: 0
+Down: 1 Distance: 10 Yardline: < 36
+The quarterback drops back to pass
+The pass sails just a bit long
+That's the end of the 1st quarter
+Home Score: 10 Away Score: 0
+Down: 2 Distance: 10 Yardline: < 36
+The quarterback drops back to pass
+What a catch by the wide receiver! That's a gain of 10 yards
+That's the end of the 1st quarter
+Home Score: 10 Away Score: 0
+First Down!
+Down: 1 Distance: 10 Yardline: < 46
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+That's the end of the 1st quarter
+Home Score: 10 Away Score: 0
+Down: 2 Distance: 6 Yardline: 50 >
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+That's the end of the 1st quarter
+Home Score: 10 Away Score: 0
+Down: 3 Distance: 2 Yardline: 46 >
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+That's the end of the 1st quarter
+Home Score: 10 Away Score: 0
+First Down!
+Down: 1 Distance: 10 Yardline: 42 >
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+That's the end of the 1st quarter
+Home Score: 10 Away Score: 0
+Down: 2 Distance: 6 Yardline: 38 >
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+That's the end of the 1st quarter
+Home Score: 10 Away Score: 0
+Down: 3 Distance: 2 Yardline: 34 >
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+That's the end of the 1st quarter
+Home Score: 10 Away Score: 0
+First Down!
+Down: 1 Distance: 10 Yardline: 30 >
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+That's the end of the 1st quarter
+Home Score: 10 Away Score: 0
+Down: 2 Distance: 6 Yardline: 26 >
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+That's the end of the 1st quarter
+Home Score: 10 Away Score: 0
+Down: 3 Distance: 2 Yardline: 22 >
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+That's the end of the 1st quarter
+Home Score: 10 Away Score: 0
+First Down!
+Down: 1 Distance: 10 Yardline: 18 >
+The quarterback drops back to pass
+What a catch by the wide receiver! That's a gain of 10 yards
+That's the end of the 1st quarter
+Home Score: 10 Away Score: 0
+First Down!
+Down: 1 Distance: 10 Yardline: 8 >
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+That's the end of the 1st quarter
+Home Score: 10 Away Score: 0
+Down: 2 Distance: 6 Yardline: 4 >
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+That's the end of the 1st quarter
+Home Score: 10 Away Score: 0
+Touchdown!
+Home Score: 17 Away Score: 0
+Down: 1 Distance: 10 Yardline: < 20
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+That's the end of the 1st quarter
+Home Score: 17 Away Score: 0
+Down: 2 Distance: 6 Yardline: < 24
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+That's the end of the 1st quarter
+Home Score: 17 Away Score: 0
+Down: 3 Distance: 2 Yardline: < 28
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+That's the end of the 1st quarter
+Home Score: 17 Away Score: 0
+First Down!
+Down: 1 Distance: 10 Yardline: < 32
+The quarterback drops back to pass
+What a catch by the wide receiver! That's a gain of 10 yards
+That's the end of the 1st quarter
+Home Score: 17 Away Score: 0
+First Down!
+Down: 1 Distance: 10 Yardline: < 42
+The quarterback drops back to pass
+The pass sails just a bit long
+That's the end of the 1st quarter
+Home Score: 17 Away Score: 0
+Down: 2 Distance: 10 Yardline: < 42
+The quarterback drops back to pass
+What a catch by the wide receiver! That's a gain of 10 yards
+That's the end of the 1st quarter
+Home Score: 17 Away Score: 0
+First Down!
+Down: 1 Distance: 10 Yardline: 48 >
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+That's the end of the 1st quarter
+Home Score: 17 Away Score: 0
+Down: 2 Distance: 6 Yardline: 44 >
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+That's the end of the 1st quarter
+Home Score: 17 Away Score: 0
+Down: 3 Distance: 2 Yardline: 40 >
+The quarterback drops back to pass
+What a catch by the wide receiver! That's a gain of 10 yards
+That's the end of the 1st quarter
+Home Score: 17 Away Score: 0
+First Down!
+Down: 1 Distance: 10 Yardline: 30 >
+The quarterback drops back to pass
+What a catch by the wide receiver! That's a gain of 10 yards
+That's the end of the 1st quarter
+Home Score: 17 Away Score: 0
+First Down!
+Down: 1 Distance: 10 Yardline: 20 >
+False Start on the Offense!
+That's the end of the 1st quarter
+Home Score: 17 Away Score: 0
+Down: 1 Distance: 20 Yardline: 30 >
+The quarterback drops back to pass
+The pass sails just a bit long
+That's the end of the 1st quarter
+Home Score: 17 Away Score: 0
+Down: 2 Distance: 20 Yardline: 30 >
+The quarterback drops back to pass
+The pass sails just a bit long
+That's the end of the 1st quarter
+Home Score: 17 Away Score: 0
+Down: 3 Distance: 20 Yardline: 30 >
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+That's the end of the 2nd quarter
+Home Score: 17 Away Score: 0
+Down: 4 Distance: 16 Yardline: 26 >
+33 Yard Field Goal!
+It's good!
+That's the end of the 2nd quarter
+Home Score: 17 Away Score: 3
+Home Score: 17 Away Score: 3
+Down: 1 Distance: 10 Yardline: < 20
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+That's the end of the 2nd quarter
+Home Score: 17 Away Score: 3
+Down: 2 Distance: 6 Yardline: < 24
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+That's the end of the 2nd quarter
+Home Score: 17 Away Score: 3
+Down: 3 Distance: 2 Yardline: < 28
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+That's the end of the 2nd quarter
+Home Score: 17 Away Score: 3
+First Down!
+Down: 1 Distance: 10 Yardline: < 32
+The quarterback drops back to pass
+What a catch by the wide receiver! That's a gain of 10 yards
+That's the end of the 2nd quarter
+Home Score: 17 Away Score: 3
+First Down!
+Down: 1 Distance: 10 Yardline: < 42
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+That's the end of the 2nd quarter
+Home Score: 17 Away Score: 3
+Down: 2 Distance: 6 Yardline: < 46
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+That's the end of the 2nd quarter
+Home Score: 17 Away Score: 3
+Down: 3 Distance: 2 Yardline: 50 >
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+That's the end of the 2nd quarter
+Home Score: 17 Away Score: 3
+First Down!
+Down: 1 Distance: 10 Yardline: 46 >
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+That's the end of the 2nd quarter
+Home Score: 17 Away Score: 3
+Down: 2 Distance: 6 Yardline: 42 >
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+That's the end of the 2nd quarter
+Home Score: 17 Away Score: 3
+Down: 3 Distance: 2 Yardline: 38 >
+False Start on the Offense!
+That's the end of the 2nd quarter
+Home Score: 17 Away Score: 3
+Down: 3 Distance: 12 Yardline: 48 >
+The quarterback drops back to pass
+The pass sails just a bit long
+That's the end of the 2nd quarter
+Home Score: 17 Away Score: 3
+Down: 4 Distance: 12 Yardline: 48 >
+Punt!
+The away team takes over at the 8 yard line.
+That's the end of the 2nd quarter
+Home Score: 17 Away Score: 3
+Down: 1 Distance: 10 Yardline: < 8
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+That's the end of the 2nd quarter
+Home Score: 17 Away Score: 3
+Down: 2 Distance: 6 Yardline: < 12
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+That's the end of the 2nd quarter
+Home Score: 17 Away Score: 3
+Down: 3 Distance: 2 Yardline: < 16
+The quarterback drops back to pass
+The quarterback was sacked!
+That's the end of the 2nd quarter
+Home Score: 17 Away Score: 3
+Down: 4 Distance: 8 Yardline: < 10
+Punt!
+The home team takes over at the 50 yard line.
+That's the end of the 2nd quarter
+Home Score: 17 Away Score: 3
+Down: 1 Distance: 10 Yardline: 50 >
+The quarterback drops back to pass
+What a catch by the wide receiver! That's a gain of 10 yards
+That's the end of the 2nd quarter
+Home Score: 17 Away Score: 3
+First Down!
+Down: 1 Distance: 10 Yardline: 40 >
+The quarterback drops back to pass
+The pass sails just a bit long
+That's the end of the 2nd quarter
+Home Score: 17 Away Score: 3
+Down: 2 Distance: 10 Yardline: 40 >
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+That's the end of the 2nd quarter
+Home Score: 17 Away Score: 3
+Down: 3 Distance: 6 Yardline: 36 >
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+That's the end of the 2nd quarter
+Home Score: 17 Away Score: 3
+Down: 4 Distance: 2 Yardline: 32 >
+39 Yard Field Goal!
+It's good!
+That's the end of the 2nd quarter
+Home Score: 20 Away Score: 3
+Home Score: 20 Away Score: 3
+Down: 1 Distance: 10 Yardline: < 20
+The quarterback drops back to pass
+What a catch by the wide receiver! That's a gain of 10 yards
+That's the end of the 2nd quarter
+Home Score: 20 Away Score: 3
+First Down!
+Down: 1 Distance: 10 Yardline: < 30
+The quarterback drops back to pass
+What a catch by the wide receiver! That's a gain of 10 yards
+That's the end of the 2nd quarter
+Home Score: 20 Away Score: 3
+First Down!
+Down: 1 Distance: 10 Yardline: < 40
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+That's the end of the 2nd quarter
+Home Score: 20 Away Score: 3
+Down: 2 Distance: 6 Yardline: < 44
+The quarterback drops back to pass
+The pass sails just a bit long
+That's the end of the 2nd quarter
+Home Score: 20 Away Score: 3
+Down: 3 Distance: 6 Yardline: < 44
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+That's the end of the 2nd quarter
+Home Score: 20 Away Score: 3
+Down: 4 Distance: 2 Yardline: < 48
+Punt!
+The home team takes over at the 12 yard line.
+That's the end of the 2nd quarter
+Home Score: 20 Away Score: 3
+Down: 1 Distance: 10 Yardline: < 12
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+That's the end of the 2nd quarter
+Home Score: 20 Away Score: 3
+Down: 2 Distance: 6 Yardline: < 16
+The quarterback drops back to pass
+What a catch by the wide receiver! That's a gain of 10 yards
+That's the end of the 3rd quarter
+Home Score: 20 Away Score: 3
+First Down!
+Down: 1 Distance: 10 Yardline: < 26
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+That's the end of the 3rd quarter
+Home Score: 20 Away Score: 3
+Down: 2 Distance: 6 Yardline: < 30
+The quarterback drops back to pass
+The pass sails just a bit long
+That's the end of the 3rd quarter
+Home Score: 20 Away Score: 3
+Down: 3 Distance: 6 Yardline: < 30
+False Start on the Offense!
+That's the end of the 3rd quarter
+Home Score: 20 Away Score: 3
+Down: 3 Distance: 16 Yardline: < 20
+False Start on the Offense!
+That's the end of the 3rd quarter
+Home Score: 20 Away Score: 3
+Down: 3 Distance: 26 Yardline: < 10
+The quarterback drops back to pass
+The pass sails just a bit long
+That's the end of the 3rd quarter
+Home Score: 20 Away Score: 3
+Down: 4 Distance: 26 Yardline: < 10
+Punt!
+The away team takes over at the 50 yard line.
+That's the end of the 3rd quarter
+Home Score: 20 Away Score: 3
+Down: 1 Distance: 10 Yardline: 50 >
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+That's the end of the 3rd quarter
+Home Score: 20 Away Score: 3
+Down: 2 Distance: 6 Yardline: 46 >
+The quarterback drops back to pass
+What a catch by the wide receiver! That's a gain of 10 yards
+That's the end of the 3rd quarter
+Home Score: 20 Away Score: 3
+First Down!
+Down: 1 Distance: 10 Yardline: 36 >
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+That's the end of the 3rd quarter
+Home Score: 20 Away Score: 3
+Down: 2 Distance: 6 Yardline: 32 >
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+That's the end of the 3rd quarter
+Home Score: 20 Away Score: 3
+Down: 3 Distance: 2 Yardline: 28 >
+The quarterback drops back to pass
+What a catch by the wide receiver! That's a gain of 10 yards
+That's the end of the 3rd quarter
+Home Score: 20 Away Score: 3
+First Down!
+Down: 1 Distance: 10 Yardline: 18 >
+The quarterback drops back to pass
+What a catch by the wide receiver! That's a gain of 10 yards
+That's the end of the 3rd quarter
+Home Score: 20 Away Score: 3
+First Down!
+Down: 1 Distance: 10 Yardline: 8 >
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+That's the end of the 3rd quarter
+Home Score: 20 Away Score: 3
+Down: 2 Distance: 6 Yardline: 4 >
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+That's the end of the 3rd quarter
+Home Score: 20 Away Score: 3
+Touchdown!
+Home Score: 20 Away Score: 10
+Down: 1 Distance: 10 Yardline: < 20
+The quarterback drops back to pass
+What a catch by the wide receiver! That's a gain of 10 yards
+That's the end of the 3rd quarter
+Home Score: 20 Away Score: 10
+First Down!
+Down: 1 Distance: 10 Yardline: < 30
+The quarterback drops back to pass
+What a catch by the wide receiver! That's a gain of 10 yards
+That's the end of the 3rd quarter
+Home Score: 20 Away Score: 10
+First Down!
+Down: 1 Distance: 10 Yardline: < 40
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+That's the end of the 3rd quarter
+Home Score: 20 Away Score: 10
+Down: 2 Distance: 6 Yardline: < 44
+The quarterback drops back to pass
+What a catch by the wide receiver! That's a gain of 10 yards
+That's the end of the 3rd quarter
+Home Score: 20 Away Score: 10
+First Down!
+Down: 1 Distance: 10 Yardline: 46 >
+The quarterback drops back to pass
+What a catch by the wide receiver! That's a gain of 10 yards
+That's the end of the 3rd quarter
+Home Score: 20 Away Score: 10
+First Down!
+Down: 1 Distance: 10 Yardline: 36 >
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+That's the end of the 3rd quarter
+Home Score: 20 Away Score: 10
+Down: 2 Distance: 6 Yardline: 32 >
+The quarterback drops back to pass
+What a catch by the wide receiver! That's a gain of 10 yards
+That's the end of the 3rd quarter
+Home Score: 20 Away Score: 10
+First Down!
+Down: 1 Distance: 10 Yardline: 22 >
+False Start on the Offense!
+That's the end of the 3rd quarter
+Home Score: 20 Away Score: 10
+Down: 1 Distance: 20 Yardline: 32 >
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+That's the end of the 3rd quarter
+Home Score: 20 Away Score: 10
+Down: 2 Distance: 16 Yardline: 28 >
+The quarterback drops back to pass
+What a catch by the wide receiver! That's a gain of 10 yards
+That's the end of the 3rd quarter
+Home Score: 20 Away Score: 10
+Down: 3 Distance: 6 Yardline: 18 >
+The quarterback drops back to pass
+What a catch by the wide receiver! That's a gain of 10 yards
+That's the end of the 3rd quarter
+Home Score: 20 Away Score: 10
+First Down!
+Down: 1 Distance: 10 Yardline: 8 >
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+That's the end of the 3rd quarter
+Home Score: 20 Away Score: 10
+Down: 2 Distance: 6 Yardline: 4 >
+The quarterback drops back to pass
+The pass sails just a bit long
+That's the end of the 3rd quarter
+Home Score: 20 Away Score: 10
+Down: 3 Distance: 6 Yardline: 4 >
+The quarterback drops back to pass
+What a catch by the wide receiver! That's a gain of 10 yards
+That's the end of the 3rd quarter
+Home Score: 20 Away Score: 10
+Touchdown!
+Home Score: 27 Away Score: 10
+Down: 1 Distance: 10 Yardline: < 20
+The quarterback drops back to pass
+The pass sails just a bit long
+That's the end of the 3rd quarter
+Home Score: 27 Away Score: 10
+Down: 2 Distance: 10 Yardline: < 20
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+Down: 3 Distance: 6 Yardline: < 24
+The QB hands the ball off
+The running back crashes up the middle for a gain of 4 yards
+Game over!
+The Home Team Wins!
+Home Score: 27 Away Score: 10
