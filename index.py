@@ -7,7 +7,6 @@ import random as R
 class Game(object):
 
   fsm = None
-  cnt = 0
   quarter = 1
   down = 1
   distance = 10
@@ -17,9 +16,9 @@ class Game(object):
   time = 0
   home_possession = True
   scored = True
+  turnover = False
 
   def __init__(self):
-    self.cnt = 0
     self.quarter = 1
     self.down = 1
     self.distance = 10
@@ -29,6 +28,7 @@ class Game(object):
     self.time = 0
     self.home_possession = True
     self.scored = True
+    self.turnover = False
     self.fsm = FSM.StackFSM()
     self.fsm.pushState(self.check_time)
     self.fsm.pushState(self.check_yardage)
@@ -68,16 +68,21 @@ class Game(object):
         self.distance = 10
         self.scored = True
     elif self.yardline <= 0:
-        print("Safety!")
-        if self.home_possession:
-            self.a_score += 2
+        if self.turnover:
+            self.turnover = not self.turnover
+            print("Touchback after the turnover")
+            self.yardline = 20
         else:
-            self.h_score += 2
-        self.yardline = 35
-        self.down = 1
-        self.distance = 1
-        self.scored = True
-        self.home_possession = not self.home_possession
+            print("Safety!")
+            if self.home_possession:
+                    self.a_score += 2 
+            else:
+                self.h_score += 2
+            self.yardline = 35
+            self.down = 1
+            self.distance = 1
+            self.scored = True
+            self.home_possession = not self.home_possession
     elif self.distance <= 0:
         print("First Down!")
         self.distance = 10
@@ -167,20 +172,54 @@ class Game(object):
         self.fsm.pushState(self.passing_play)
 
   def running_play(self):
-      print("The running back crashes up the middle for a gain of 4 yards")
-      self.distance -= 4
-      self.yardline += 4
-      self.down += 1
+      value = R.randrange(0, 100)
+      fumble = 6
+      tackle_for_loss = 16
+      long = 30
+      if value < fumble:
+          print("FUMBLE!")
+          lost = R.randrange(0, 2)
+          if lost == 1:
+              print("The defense recovers")
+              self.home_possession = not self.home_possession
+              self.down = 1
+              self.distance = 10
+              self.yardline = 100 - self.yardline
+          else:
+              print("The offense manages to get the ball back")
+              self.down += 1
+      elif value < tackle_for_loss:
+          print("Bonecrushing hit in the backfield for a loss of 2")
+          self.distance += 2
+          self.yardline -= 2
+          self.down += 1
+      elif value < long:
+          print("What a run! The running back gains 12")
+          self.distance -= 12
+          self.yardline += 12
+          self.down += 1
+      else:
+          print("The running back crashes up the middle for a gain of 4 yards")
+          self.distance -= 4
+          self.yardline += 4
+          self.down += 1
       self.fsm.popState()
 
   def passing_play(self):
       value = R.randrange(0,100)
       sack = 5
+      interception = 20
       catch = 65
       if value < sack:
           print("The quarterback was sacked!")
           self.distance += 6
           self.yardline -= 6
+      elif value < interception:
+          print("It was picked off by the defender!")
+          self.home_possession = not self.home_possession
+          self.down = 1
+          self.distance = 10
+          self.yardline = 100 - self.yardline - 15
       elif value < catch:
           print("What a catch by the wide receiver! That's a gain of 10 yards")
           self.distance -= 10
