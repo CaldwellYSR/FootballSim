@@ -1,22 +1,9 @@
 #!bin/bash
 
 import StackFSM as FSM
-import time
 import random as R
 
 class Game(object):
-
-  fsm = None
-  quarter = 1
-  down = 1
-  distance = 10
-  h_score = 0
-  a_score = 0
-  yardline = 20
-  time = 0
-  home_possession = True
-  scored = True
-  turnover = False
 
   def __init__(self):
     self.quarter = 1
