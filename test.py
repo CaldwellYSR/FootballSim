@@ -2,6 +2,7 @@
 
 import StackFSM as FSM
 import random as R
+from math import ceil
 
 class Game:
     def __init__(self):
@@ -84,11 +85,16 @@ class Game:
 
     def formation(self, cargo):
         value = R.randrange(0, 100)
-        falseStart = 5
+        falseStart = 2
         if value < falseStart:
             print("False Start on the Offense!")
-            self.distance += 10
-            self.yardline -= 10
+            if self.yardline - 10 > 0:
+                self.distance += 10
+                self.yardline -= 10
+            else:
+                tmp = self.yardline
+                self.yardline -= ceil(self.yardline / 2.0)
+                self.distance += tmp - self.yardline
             return ("Check Time", cargo)
         else:
             if self.down == 4:
