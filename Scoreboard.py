@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-class Game(object):
+class Scoreboard:
 
     def __init__(self):
         self.quarter = 1
@@ -16,14 +16,13 @@ class Game(object):
 
     def check_time(self, cargo):
         self.time += 30
-        if self.time >= 3600:
-            cargo = (self.h_score, self.a_score)
+        if self.time >= 3600 and self.quarter == 4:
             return ("Game Over", cargo)
-        elif self.time >= 2700:
+        elif self.time >= 2700 and self.quarter == 3:
             print("<p>That's the end of the 3rd quarter</p>")
             print("<p>Home Score: {:d} Away Score: {:d}</p>".format( self.h_score, self.a_score ))
             self.quarter = 4
-        elif self.time >= 1800:
+        elif self.time >= 1800 and self.quarter == 2:
             print("<p>That's the end of the 2nd quarter</p>")
             print("<p>Home Score: {:d} Away Score: {:d}</p>".format( self.h_score, self.a_score ))
             self.home_possession = False
@@ -31,7 +30,7 @@ class Game(object):
             self.down = 1
             self.distance = 10
             self.quarter = 3
-        elif self.time >= 900:
+        elif self.time >= 900 and self.quarter == 1:
             print("<p>That's the end of the 1st quarter</p>")
             print("<p>Home Score: {:d} Away Score: {:d}</p>".format( self.h_score, self.a_score ))
             self.quarter = 2
@@ -51,7 +50,6 @@ class Game(object):
             self.scored = True
         elif self.yardline <= 0:
             if self.turnover:
-                self.turnover = not self.turnover
                 print("Touchback after the turnover")
                 self.yardline = 20
             else:
@@ -72,5 +70,8 @@ class Game(object):
         if self.scored:
             print("Home Score: {:d} Away Score: {:d}".format( self.h_score, self.a_score ))
             self.scored = False
+        if self.turnover:
+            self.turnover = False
+            return ("Swap Possession", cargo)
         return ("Describe Down", cargo)
 

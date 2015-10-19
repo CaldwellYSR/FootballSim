@@ -62,15 +62,8 @@ class StateMachine:
         while True:
             (newState, cargo) = handler(cargo)
             if newState.upper() in self.endStates:
-                h_score, a_score = cargo
-                print("Game over!")
-                if h_score == a_score:
-                    print("It was a draw!")
-                elif h_score > a_score:
-                    print("The Home Team Wins!")
-                else:
-                    print("The Away Team Wins!")
-                print("Home Score: {:d} Away Score: {:d}".format( h_score, a_score ))
+                handler = self.handlers[newState.upper()]  
+                handler(cargo)
                 break 
             else:
                 handler = self.handlers[newState.upper()]  
