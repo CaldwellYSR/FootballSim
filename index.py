@@ -2,235 +2,184 @@
 
 import StackFSM as FSM
 import random as R
+import Scoreboard as S
+import Team as T
+from math import ceil
 
-class Game(object):
+class Game:
+    def __init__(self):
+        self.fsm = FSM.StateMachine()
+        self.scoreboard = S.Scoreboard()
+        print()
+        print("===== New Game =====")
+        print()
+        self.home_team = T.Team("Miami Dolphins", "MIA")
+        self.away_team = T.Team("New England Patriots", "NE")
+        self.offense = self.home_team
+        self.defense = self.away_team
+        self.offense.possession = True
+        self.scoreboard.home_possession = self.home_team.possession
+        print("The {:s} have the ball at their own 20 yard line.".format(self.offense.name))
+    
+    def describe_down(self, cargo):
+        yard = "< "+str(self.scoreboard.yardline) if self.scoreboard.yardline < 50 else str(100 - self.scoreboard.yardline)+" >"
+        print("Down: {:d} Distance: {:d} Yardline: {:s}".format( self.scoreboard.down, self.scoreboard.distance, yard))
+        return ("Formation", cargo)
 
-  def __init__(self):
-    self.quarter = 1
-    self.down = 1
-    self.distance = 10
-    self.h_score = 0
-    self.a_score = 0
-    self.yardline = 20
-    self.time = 0
-    self.home_possession = True
-    self.scored = True
-    self.turnover = False
-    self.fsm = FSM.StackFSM()
-    self.fsm.pushState(self.check_time)
-    self.fsm.pushState(self.check_yardage)
+    def _move_ball(self, yds):
+        self.scoreboard.distance -= yds
+        self.scoreboard.yardline += yds
 
-  def check_time(self):
-    self.time += 30
-    if self.time >= 3600:
-        self.fsm.pushState(self.game_over)
-    elif self.time >= 2700:
-        print("That's the end of the 3rd quarter")
-        print("Home Score: {:d} Away Score: {:d}".format( self.h_score, self.a_score ))
-        self.quarter = 4
-    elif self.time >= 1800:
-        print("That's the end of the 2nd quarter")
-        print("Home Score: {:d} Away Score: {:d}".format( self.h_score, self.a_score ))
-        self.home_possession = False
-        self.yardline = 20
-        self.down = 1
-        self.distance = 10
-        self.quarter = 3
-    elif self.time >= 900:
-        print("That's the end of the 1st quarter")
-        print("Home Score: {:d} Away Score: {:d}".format( self.h_score, self.a_score ))
-        self.quarter = 2
-    self.fsm.pushState(self.check_yardage)
+    def _first_down(self):
+        self.scoreboard.down = 1
+        self.scoreboard.distance = 10
 
-  def check_yardage(self):
-    if self.yardline >= 100:
-        print("Touchdown!")
-        if self.home_possession:
-            self.h_score += 7
-        else:
-            self.a_score += 7
-        self.home_possession = not self.home_possession
-        self.yardline = 20
-        self.down = 1
-        self.distance = 10
-        self.scored = True
-    elif self.yardline <= 0:
-        if self.turnover:
-            self.turnover = not self.turnover
-            print("Touchback after the turnover")
-            self.yardline = 20
-        else:
-            print("Safety!")
-            if self.home_possession:
-                    self.a_score += 2 
+    def swap_possession(self, cargo):
+        print("The {:s} take over at the {:d} yard line".format(self.defense.name, self.scoreboard.yardline))
+        tmp = self.offense
+        self.offense = self.defense
+        self.defense = tmp
+        self.offense.possession = False
+        self.defense.possession = True
+        return ("Check Time", cargo)
+
+    def formation(self, cargo):
+        value = R.randrange(0, 100)
+        falseStart = self.offense.false_start_chance()
+        if value < falseStart:
+            print("False Start on the Offense!")
+            if self.scoreboard.yardline - 10 > 0:
+                self._move_ball(-10)
             else:
-                self.h_score += 2
-            self.yardline = 35
-            self.down = 1
-            self.distance = 1
-            self.scored = True
-            self.home_possession = not self.home_possession
-    elif self.distance <= 0:
-        print("First Down!")
-        self.distance = 10
-        self.down = 1
-    if self.scored:
-        print("Home Score: {:d} Away Score: {:d}".format( self.h_score, self.a_score ))
-        self.scored = False
-    self.fsm.popState()
-    self.fsm.pushState(self.describe_down)
-
-
-  def describe_down(self):
-    yard = "< "+str(self.yardline) if self.yardline < 50 else str(100 - self.yardline)+" >"
-    print("Down: {:d} Distance: {:d} Yardline: {:s}".format( self.down, self.distance, yard))
-    self.fsm.popState()
-    self.fsm.pushState(self.formation)
-
-  def formation(self):
-    value = R.randrange(0, 100)
-    falseStart = 5
-    if value < falseStart:
-        print("False Start on the Offense!")
-        self.distance += 10
-        self.yardline -= 10
-        self.fsm.popState()
-    else:
-        self.fsm.popState()
-        if self.down == 4:
-            if (self.yardline >= 60):
-                self.fsm.pushState(self.field_goal)
+                tmp = self.scoreboard.yardline
+                self.scoreboard.yardline -= ceil(self.scoreboard.yardline / 2.0)
+                self.scoreboard.distance += tmp - self.scoreboard.yardline
+            return ("Check Time", cargo)
+        else:
+            if self.scoreboard.down == 4:
+                if (self.scoreboard.yardline >= 60):
+                    return ("Field Goal", cargo)
+                else:
+                    return ("Punt", cargo)
             else:
-                self.fsm.pushState(self.punt)
+                return ("Quaterback Has Ball", cargo)
+
+    def punt(self, cargo):
+        print("Punt!")
+        self.scoreboard.yardline = 100 - (self.scoreboard.yardline + 40)
+        if self.scoreboard.yardline <= 0:
+            print("Touchback!")
+            self.scoreboard.yardline = 20
+            
+        self._first_down()
+        return ("Swap Possession", cargo)
+
+    def field_goal(self, cargo):
+        print("{:d} Yard Field Goal!".format((100 - self.scoreboard.yardline) + 7))
+        value = R.randrange(0, 100)
+        made = self.offense.field_goal_chance()
+        if value < made:
+            print("It's good!")
+            if self.scoreboard.home_possession:
+                self.scoreboard.h_score += 3
+            else:
+                self.scoreboard.a_score += 3
+            self.scoreboard.yardline = 20
+            self.scoreboard.scored = True
         else:
-            self.fsm.pushState(self.qb_has_ball)
+            print("No good!")
+            self.scoreboard.yardline = 100 - self.scoreboard.yardline
 
-  def punt(self):
-    print("Punt!")
-    self.yardline = 100 - (self.yardline + 40)
-    self.home_possession = not self.home_possession
-    if self.yardline <= 0:
-        if self.home_possession:
-            print("Touchback! The home team takes over at the 20 yard line.")
+        self._first_down()
+        return ("Swap Possession", cargo)
+
+    def qb_has_ball(self, cargo):
+        value = R.randrange(0, 1000)
+        running = self.offense.running_play_chance()
+        if value < running:
+            print("The QB hands the ball off")
+            return ("Running Play", cargo)
         else:
-            print("Touchback! The away team takes over at the 20 yard line.")
-        self.yardline = 20
-    else:
-        if self.home_possession:
-            print("The home team takes over at the {:d} yard line.".format(self.yardline))
+            print("The quarterback drops back to pass")
+            return ("Passing Play", cargo)
+
+    def running_play(self, cargo):
+        value = R.randrange(0, 100)
+        fumble = self.offense.fumble_chance()
+        tackle_for_loss = self.offense.tackle_for_loss_chance()
+        long = self.offense.long_run_chance()
+        if value < fumble:
+            print("FUMBLE!")
+            lost = R.randrange(0, 2)
+            if lost == 1:
+                print("The defense recovers")
+                self._first_down()
+                self.scoreboard.yardline = 100 - self.scoreboard.yardline
+                return ("Swap Possession", cargo)
+            else:
+                print("The offense manages to get the ball back")
+                self.scoreboard.down += 1
+        elif value < tackle_for_loss:
+            print("Bonecrushing hit in the backfield for a loss of 2")
+            self.scoreboard.distance += 2
+            self.scoreboard.yardline -= 2
+            self.scoreboard.down += 1
+        elif value < long:
+            print("What a run! The running back gains 12")
+            self.scoreboard.distance -= 12
+            self.scoreboard.yardline += 12
+            self.scoreboard.down += 1
         else:
-            print("The away team takes over at the {:d} yard line.".format(self.yardline))
-        
-    self.down = 1
-    self.distance = 10
-    self.fsm.popState()
+            print("The running back crashes up the middle for a gain of 4 yards")
+            self.scoreboard.distance -= 4
+            self.scoreboard.yardline += 4
+            self.scoreboard.down += 1
+        return ("Check Time", cargo)
 
-  def field_goal(self):
-      print("{:d} Yard Field Goal!".format((100 - self.yardline) + 7))
-      value = R.randrange(0, 100)
-      made = 85
-      if value < made:
-          print("It's good!")
-          if self.home_possession:
-              self.h_score += 3
-          else:
-              self.a_score += 3
-          self.yardline = 20
-          self.scored = True
-      else:
-          print("No good!")
-          self.yardline = 100 - self.yardline
-          
-      self.down = 1
-      self.distance = 10
-      self.home_possession = not self.home_possession
-      self.fsm.popState()
+    def passing_play(self, cargo):
+        value = R.randrange(0,100)
+        sack = self.defense.sack_chance()
+        interception = self.defense.interception_chance()
+        catch = self.offense.catch_chance()
+        if value < sack:
+            print("The quarterback was sacked!")
+            self._move_ball(-6)
+        elif value < interception:
+            print("It was picked off by the defender!")
+            self.scoreboard.home_possession = not self.scoreboard.home_possession
+            self.scoreboard.yardline = 100 - self.scoreboard.yardline - 15
+            return ("Swap Possession", cargo)
+        elif value < catch:
+            print("What a catch by the wide receiver! That's a gain of 10 yards")
+            self._move_ball(10)
+        else:
+            print("The pass sails just a bit long")
+        self.scoreboard.down += 1
+        return ("Check Time", cargo)
 
-  def qb_has_ball(self):
-    value = R.randrange(0, 1000)
-    running = 550
-    if value < running:
-        print("The QB hands the ball off")
-        self.fsm.popState()
-        self.fsm.pushState(self.running_play)
-    else:
-        print("The quarterback drops back to pass")
-        self.fsm.popState()
-        self.fsm.pushState(self.passing_play)
-
-  def running_play(self):
-      value = R.randrange(0, 100)
-      fumble = 6
-      tackle_for_loss = 16
-      long = 30
-      if value < fumble:
-          print("FUMBLE!")
-          lost = R.randrange(0, 2)
-          if lost == 1:
-              print("The defense recovers")
-              self.home_possession = not self.home_possession
-              self.down = 1
-              self.distance = 10
-              self.yardline = 100 - self.yardline
-          else:
-              print("The offense manages to get the ball back")
-              self.down += 1
-      elif value < tackle_for_loss:
-          print("Bonecrushing hit in the backfield for a loss of 2")
-          self.distance += 2
-          self.yardline -= 2
-          self.down += 1
-      elif value < long:
-          print("What a run! The running back gains 12")
-          self.distance -= 12
-          self.yardline += 12
-          self.down += 1
-      else:
-          print("The running back crashes up the middle for a gain of 4 yards")
-          self.distance -= 4
-          self.yardline += 4
-          self.down += 1
-      self.fsm.popState()
-
-  def passing_play(self):
-      value = R.randrange(0,100)
-      sack = 5
-      interception = 20
-      catch = 65
-      if value < sack:
-          print("The quarterback was sacked!")
-          self.distance += 6
-          self.yardline -= 6
-      elif value < interception:
-          print("It was picked off by the defender!")
-          self.home_possession = not self.home_possession
-          self.down = 1
-          self.distance = 10
-          self.yardline = 100 - self.yardline - 15
-      elif value < catch:
-          print("What a catch by the wide receiver! That's a gain of 10 yards")
-          self.distance -= 10
-          self.yardline += 10
-      else:
-          print("The pass sails just a bit long")
-      self.down += 1
-      self.fsm.popState()
-
-  def game_over(self):
-      print("Game over!")
-      if self.h_score == self.a_score:
-          print("It was a draw!")
-      elif self.h_score > self.a_score:
-          print("The Home Team Wins!")
-      else:
-          print("The Away Team Wins!")
-      print("Home Score: {:d} Away Score: {:d}".format( self.h_score, self.a_score ))
-      exit()
-
-  def update(self):
-    self.fsm.update()
+    def game_over(self, cargo):
+        print("Game over!")
+        if self.scoreboard.h_score == self.scoreboard.a_score:
+            print("It was a draw!")
+        elif self.scoreboard.h_score > self.scoreboard.a_score:
+            print("The {:s} Win!".format(self.home_team.name))
+        else:
+            print("The {:s} Win!".format(self.away_team.name))
+        print("{:s}: {:d} {:s}: {:d}".format( self.home_team.short_name, self.scoreboard.h_score, self.away_team.short_name, self.scoreboard.a_score ))
+        return 0
 
 if __name__ == "__main__":
-  game = Game()
-  while True:
-    game.update()
+    game = Game()
+    game.fsm.add_state("Check Time", game.scoreboard.check_time)
+    game.fsm.add_state("Check Yardage", game.scoreboard.check_yardage)
+    game.fsm.add_state("Swap Possession", game.swap_possession)
+    game.fsm.add_state("Describe Down", game.describe_down)
+    game.fsm.add_state("Formation", game.formation)
+    game.fsm.add_state("Punt", game.punt)
+    game.fsm.add_state("Field Goal", game.field_goal)
+    game.fsm.add_state("Quaterback Has Ball", game.qb_has_ball)
+    game.fsm.add_state("Running Play", game.running_play)
+    game.fsm.add_state("Passing Play", game.passing_play)
+    game.fsm.add_state("Game Over", game.game_over, end_state=1)
+    game.fsm.set_start("Check Time")
+    game.fsm.run("")
