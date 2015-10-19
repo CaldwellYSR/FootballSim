@@ -11,7 +11,7 @@ class Game:
         self.fsm = FSM.StateMachine()
         self.scoreboard = S.Scoreboard()
         print()
-        print("===== New Game =====")
+        print("<p>===== New Game =====</p>")
         print()
         self.home_team = T.Team("Miami Dolphins", "MIA")
         self.away_team = T.Team("New England Patriots", "NE")
@@ -19,12 +19,12 @@ class Game:
         self.defense = self.away_team
         self.offense.possession = True
         self.scoreboard.home_possession = self.home_team.possession
-        print("The {:s} have the ball at their own 20 yard line.".format(self.offense.name))
+        print("<p>The {:s} have the ball at their own 20 yard line.</p>".format(self.offense.name))
     
-    def describe_down(self, cargo):
-        yard = "< "+str(self.scoreboard.yardline) if self.scoreboard.yardline < 50 else str(100 - self.scoreboard.yardline)+" >"
-        print("Down: {:d} Distance: {:d} Yardline: {:s}".format( self.scoreboard.down, self.scoreboard.distance, yard))
-        return ("Formation", cargo)
+    def describe_down(self, args):
+        yard = "<p>< </p>"+str(self.scoreboard.yardline) if self.scoreboard.yardline < 50 else str(100 - self.scoreboard.yardline)+"<p> ></p>"
+        print("<p>Down: {:d} Distance: {:d} Yardline: {:s}</p>".format( self.scoreboard.down, self.scoreboard.distance, yard))
+        return ("Formation", args)
 
     def _move_ball(self, yds):
         self.scoreboard.distance -= yds
@@ -34,52 +34,52 @@ class Game:
         self.scoreboard.down = 1
         self.scoreboard.distance = 10
 
-    def swap_possession(self, cargo):
-        print("The {:s} take over at the {:d} yard line".format(self.defense.name, self.scoreboard.yardline))
+    def swap_possession(self, args):
+        print("<p>The {:s} take over at the {:d} yard line</p>".format(self.defense.name, self.scoreboard.yardline))
         tmp = self.offense
         self.offense = self.defense
         self.defense = tmp
         self.offense.possession = False
         self.defense.possession = True
-        return ("Check Time", cargo)
+        return ("Check Time", args)
 
-    def formation(self, cargo):
+    def formation(self, args):
         value = R.randrange(0, 100)
         falseStart = self.offense.false_start_chance()
         if value < falseStart:
-            print("False Start on the Offense!")
+            print("<p>False Start on the Offense!</p>")
             if self.scoreboard.yardline - 10 > 0:
                 self._move_ball(-10)
             else:
                 tmp = self.scoreboard.yardline
                 self.scoreboard.yardline -= ceil(self.scoreboard.yardline / 2.0)
                 self.scoreboard.distance += tmp - self.scoreboard.yardline
-            return ("Check Time", cargo)
+            return ("Check Time", args)
         else:
             if self.scoreboard.down == 4:
                 if (self.scoreboard.yardline >= 60):
-                    return ("Field Goal", cargo)
+                    return ("Field Goal", args)
                 else:
-                    return ("Punt", cargo)
+                    return ("Punt", args)
             else:
-                return ("Quaterback Has Ball", cargo)
+                return ("Quaterback Has Ball", args)
 
-    def punt(self, cargo):
-        print("Punt!")
+    def punt(self, args):
+        print("<p>Punt!</p>")
         self.scoreboard.yardline = 100 - (self.scoreboard.yardline + 40)
         if self.scoreboard.yardline <= 0:
-            print("Touchback!")
+            print("<p>Touchback!</p>")
             self.scoreboard.yardline = 20
             
         self._first_down()
-        return ("Swap Possession", cargo)
+        return ("Swap Possession", args)
 
-    def field_goal(self, cargo):
-        print("{:d} Yard Field Goal!".format((100 - self.scoreboard.yardline) + 7))
+    def field_goal(self, args):
+        print("<p>{:d} Yard Field Goal!</p>".format((100 - self.scoreboard.yardline) + 7))
         value = R.randrange(0, 100)
         made = self.offense.field_goal_chance()
         if value < made:
-            print("It's good!")
+            print("<p>It's good!</p>")
             if self.scoreboard.home_possession:
                 self.scoreboard.h_score += 3
             else:
@@ -87,85 +87,85 @@ class Game:
             self.scoreboard.yardline = 20
             self.scoreboard.scored = True
         else:
-            print("No good!")
+            print("<p>No good!</p>")
             self.scoreboard.yardline = 100 - self.scoreboard.yardline
 
         self._first_down()
-        return ("Swap Possession", cargo)
+        return ("Swap Possession", args)
 
-    def qb_has_ball(self, cargo):
+    def qb_has_ball(self, args):
         value = R.randrange(0, 1000)
         running = self.offense.running_play_chance()
         if value < running:
-            print("The QB hands the ball off")
-            return ("Running Play", cargo)
+            print("<p>The QB hands the ball off</p>")
+            return ("Running Play", args)
         else:
-            print("The quarterback drops back to pass")
-            return ("Passing Play", cargo)
+            print("T<p>he quarterback drops back to pass</p>")
+            return ("Passing Play", args)
 
-    def running_play(self, cargo):
+    def running_play(self, args):
         value = R.randrange(0, 100)
         fumble = self.offense.fumble_chance()
         tackle_for_loss = self.offense.tackle_for_loss_chance()
         long = self.offense.long_run_chance()
         if value < fumble:
-            print("FUMBLE!")
+            print("<p>FUMBLE!</p>")
             lost = R.randrange(0, 2)
             if lost == 1:
-                print("The defense recovers")
+                print("<p>The defense recovers</p>")
                 self._first_down()
                 self.scoreboard.yardline = 100 - self.scoreboard.yardline
-                return ("Swap Possession", cargo)
+                return ("Swap Possession", args)
             else:
-                print("The offense manages to get the ball back")
+                print("<p>The offense manages to get the ball back</p>")
                 self.scoreboard.down += 1
         elif value < tackle_for_loss:
-            print("Bonecrushing hit in the backfield for a loss of 2")
+            print("<p>Bonecrushing hit in the backfield for a loss of 2</p>")
             self.scoreboard.distance += 2
             self.scoreboard.yardline -= 2
             self.scoreboard.down += 1
         elif value < long:
-            print("What a run! The running back gains 12")
+            print("<p>What a run! The running back gains 12</p>")
             self.scoreboard.distance -= 12
             self.scoreboard.yardline += 12
             self.scoreboard.down += 1
         else:
-            print("The running back crashes up the middle for a gain of 4 yards")
+            print("<p>The running back crashes up the middle for a gain of 4 yards</p>")
             self.scoreboard.distance -= 4
             self.scoreboard.yardline += 4
             self.scoreboard.down += 1
-        return ("Check Time", cargo)
+        return ("Check Time", args)
 
-    def passing_play(self, cargo):
+    def passing_play(self, args):
         value = R.randrange(0,100)
         sack = self.defense.sack_chance()
         interception = self.defense.interception_chance()
         catch = self.offense.catch_chance()
         if value < sack:
-            print("The quarterback was sacked!")
+            print("<p>The quarterback was sacked!</p>")
             self._move_ball(-6)
         elif value < interception:
-            print("It was picked off by the defender!")
+            print("<p>It was picked off by the defender!</p>")
             self.scoreboard.home_possession = not self.scoreboard.home_possession
             self.scoreboard.yardline = 100 - self.scoreboard.yardline - 15
-            return ("Swap Possession", cargo)
+            return ("Swap Possession", args)
         elif value < catch:
-            print("What a catch by the wide receiver! That's a gain of 10 yards")
+            print("<p>What a catch by the wide receiver! That's a gain of 10 yards</p>")
             self._move_ball(10)
         else:
-            print("The pass sails just a bit long")
+            print("<p>The pass sails just a bit long</p>")
         self.scoreboard.down += 1
-        return ("Check Time", cargo)
+        return ("Check Time", args)
 
-    def game_over(self, cargo):
-        print("Game over!")
+    def game_over(self, args):
+        print("<p>Game over!</p>")
         if self.scoreboard.h_score == self.scoreboard.a_score:
-            print("It was a draw!")
+            print("<p>It was a draw!</p>")
         elif self.scoreboard.h_score > self.scoreboard.a_score:
-            print("The {:s} Win!".format(self.home_team.name))
+            print("<p>The {:s} Win!</p>".format(self.home_team.name))
         else:
-            print("The {:s} Win!".format(self.away_team.name))
-        print("{:s}: {:d} {:s}: {:d}".format( self.home_team.short_name, self.scoreboard.h_score, self.away_team.short_name, self.scoreboard.a_score ))
+            print("<p>The {:s} Win!</p>".format(self.away_team.name))
+        print("<p>{:s}: {:d} {:s}: {:d}</p>".format( self.home_team.short_name, self.scoreboard.h_score, self.away_team.short_name, self.scoreboard.a_score ))
         return 0
 
 if __name__ == "__main__":

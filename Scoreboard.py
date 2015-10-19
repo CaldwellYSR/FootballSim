@@ -1,5 +1,4 @@
 #!/usr/bin/python
-
 class Scoreboard:
 
     def __init__(self):
