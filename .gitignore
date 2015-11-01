@@ -1,2 +1,5 @@
 results.txt
 __pycache__/
+*.pyc
+.*.swp
+.swp
