@@ -13,31 +13,31 @@ class Scoreboard:
         self.scored = True
         self.turnover = False
 
-    def check_time(self, cargo):
+    def check_time(self, args):
         self.time += 30
         if self.time >= 3600 and self.quarter == 4:
-            return ("Game Over", cargo)
+            return ("Game Over", args)
         elif self.time >= 2700 and self.quarter == 3:
-            print("<p>That's the end of the 3rd quarter</p>")
-            print("<p>Home Score: {:d} Away Score: {:d}</p>".format( self.h_score, self.a_score ))
+            print "<p>That's the end of the 3rd quarter</p>"
+            print "<p>Home Score: {:d} Away Score: {:d}</p>".format( self.h_score, self.a_score )
             self.quarter = 4
         elif self.time >= 1800 and self.quarter == 2:
-            print("<p>That's the end of the 2nd quarter</p>")
-            print("<p>Home Score: {:d} Away Score: {:d}</p>".format( self.h_score, self.a_score ))
+            print "<p>That's the end of the 2nd quarter</p>"
+            print "<p>Home Score: {:d} Away Score: {:d}</p>".format( self.h_score, self.a_score )
             self.home_possession = False
             self.yardline = 20
             self.down = 1
             self.distance = 10
             self.quarter = 3
         elif self.time >= 900 and self.quarter == 1:
-            print("<p>That's the end of the 1st quarter</p>")
-            print("<p>Home Score: {:d} Away Score: {:d}</p>".format( self.h_score, self.a_score ))
+            print "<p>That's the end of the 1st quarter</p>"
+            print "<p>Home Score: {:d} Away Score: {:d}</p>".format( self.h_score, self.a_score )
             self.quarter = 2
-        return ("Check Yardage", cargo)
+        return ("Check Yardage", args)
 
-    def check_yardage(self, cargo):
+    def check_yardage(self, args):
         if self.yardline >= 100:
-            print("Touchdown!")
+            print "Touchdown!"
             if self.home_possession:
                 self.h_score += 7
             else:
@@ -49,28 +49,28 @@ class Scoreboard:
             self.scored = True
         elif self.yardline <= 0:
             if self.turnover:
-                print("Touchback after the turnover")
+                print "Touchback after the turnover"
                 self.yardline = 20
             else:
-                print("Safety!")
+                print "Safety!"
                 if self.home_possession:
                         self.a_score += 2 
                 else:
                     self.h_score += 2
                 self.yardline = 35
                 self.down = 1
-                self.distance = 1
+                self.distance = 10
                 self.scored = True
                 self.home_possession = not self.home_possession
         elif self.distance <= 0:
-            print("First Down!")
+            print "First Down!"
             self.distance = 10
             self.down = 1
         if self.scored:
-            print("Home Score: {:d} Away Score: {:d}".format( self.h_score, self.a_score ))
+            print "Home Score: {:d} Away Score: {:d}".format( self.h_score, self.a_score )
             self.scored = False
         if self.turnover:
             self.turnover = False
-            return ("Swap Possession", cargo)
-        return ("Describe Down", cargo)
+            return ("Swap Possession", args)
+        return ("Describe Down", args)
 

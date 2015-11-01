@@ -1,19 +1,31 @@
 #!/usr/bin/python
 
+import nfldb as nfl
+
 class Team:
 
-    def __init__(self, name = "Team", short_name = "XXX"):
+    def __init__(self, name = "Team", short_name = "UNK", year = 2009):
         self.name = name
         self.short_name = short_name
         self.possession = False
-        print(self.name)
+        self.year = year
+        self.db = nfl.connect()
+        self.q = nfl.Query(self.db)
+        self.q.player(team=short_name)
+        self.roster = self.q.as_aggregate()
+        print self.name
 
     # TODO use team statistics to determine these values
     def false_start_chance(self):
         return 2
 
     def field_goal_chance(self):
-        return 85
+        attempts = 0
+        made = 0
+        for stats in self.roster:
+            attempts += stats.kicking_fga
+            made += stats.kicking_fgm
+        return ( float(made) / float(attempts) ) * 1000
 
     def running_play_chance(self):
         return 550
